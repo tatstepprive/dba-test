@@ -1,0 +1,38 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div th:insert="navbar :: navigation"></div>
+<section class="jumbotron text-center mb-0 pb-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8"><h3>WELCOME TO DBA TEST</h3></div>
+            <div class="col-lg-2 text-right pt-2"><span th:text="${count}"></span></div>
+        </div>
+    </div>
+</section>
+<div class="container text-lg-center mt-4">
+    <img  class="rounded-circle img-fluid" alt="vini img"  th:src="@{/images/vini-vidi-vici.jpg}"  />
+    <div class="d-flex flex-column flex-md-row justify-content-md-center">
+
+        <div class="col-auto text-center ">
+            <a th:href="@{/learn}"  class="btn btn-custom mb-2 mt-3">LEARN</a>
+        </div>
+
+        <div class="col-auto text-center ">
+            <a th:href="@{/test}"  class="btn btn-custom mb-2 mt-3">TEST</a>
+        </div>
+
+        <div class="col-auto text-center ">
+            <a th:href="@{/score}"  class="btn btn-custom mb-2 mt-3">SCORE</a>
+        </div>
+
+    </div>
+</div>
+
+<script th:src="@{webjars/jquery/3.1.1/jquery.min.js}"></script>
+<script th:src="@{webjars/bootstrap/4.4.1/js/bootstrap.min.js}"></script>
+<script th:src="@{webjars/font-awesome/5.12.0/js/all.min.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div th:insert="navbar :: navigation"></div>
+<section class="jumbotron text-center mb-0 pb-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8"><h3>TESTING</h3></div>
+            <div class="col-lg-2 text-right pt-2"><span th:text="${count}"></span></div>
+        </div>
+    </div>
+</section>
+<div class="container text-lg-center">
+
+    <form method="post" th:object="${word}" th:action="@{'/test/'+${testname}}" autocomplete="off"> 
+<!--CORR            <form method="post" th:object="${word}" th:action="@{/test}" autocomplete="off"> -->
+        <div class="row">
+            <div class="col col-lg-12 text-lg-center feature-box">
+                <!--          <img alt="info" width="24" height="24" th:src="@{/images/info-icon.png}"></img>-->
+                <div class="display-4 text-default font-weight-bold text-lg-center">
+                    <span th:text="${word.nameNl}" th:field="*{nameNl}"></span>
+                </div>
+
+                <input hidden class="form-control form-control-lg" th:type="text" th:field="*{id}">
+                <input hidden class="form-control form-control-lg" th:type="text" th:field="*{nameNl}">
+
+                <div hidden class="row">
+                    <div class="col-lg-6 pl-1 pr-0">
+                        <label for="latin1"></label>
+                        <input class="form-control form-control-lg" th:type="text" th:field="*{firstColumnLat}"
+                               id="latin1" placeholder="latin first column" >
+                    </div>
+                    <div class="col-lg-6 pl-1 pr-0">
+                        <label for="latin2"></label>
+                        <input class="form-control form-control-lg" type="text" th:field="*{secondColumnLat}"
+                               id="latin2" placeholder="latin second column" >
+                    </div>
+                </div>
+                <div hidden class="row">
+                    <div class="col-lg-6 pl-1 pr-0">
+                        <label for="gender"></label>
+                        <input class="form-control form-control-lg" type="text" th:field="*{gender}"
+                               id="gender" placeholder="gender for latin word" >
+                    </div>
+                </div>
+                <!--checkbox group
+                <div class="mt-4">
+                  <div class="col-1">
+                    <div class="form-check form-check-inline ">
+                        <input class="form-check-input" type="radio" name="gender" th:field="*{gender}"
+                               id="inlineRadio1" value="A" required>
+                        <label class="form-check-label" for="inlineRadio1"><span th:text="${word.firstColumnLat}"></span></label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" th:field="*{gender}"
+                               id="inlineRadio2"  value="B" required>
+                        <label class="form-check-label" for="inlineRadio2"><span th:text="${word.secondColumnLat}"></span></label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" th:field="*{gender}"
+                               id="inlineRadio3" value="C" required>
+                        <label class="form-check-label" for="inlineRadio3"><span th:text="${word.gender}"></span></label>
+                    </div>
+                  </div>
+                </div>
+                <!--enc checkbox group-->
+                <!--checkbox group-->
+                <div class="text-lg-left"> 
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="correctRespCode" th:field="*{correctRespCode}"
+                               id="inlineRadio1" value="A" required>
+                        <label class="form-check-label" for="inlineRadio1"><span th:text="${word.firstColumnLat}"></span></label>
+                    </div> 
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="correctRespCode" th:field="*{correctRespCode}"
+                               id="inlineRadio2"  value="B" required>
+                        <label class="form-check-label" for="inlineRadio2"><span th:text="${word.secondColumnLat}"></span></label>
+                    </div>
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="correctRespCode" th:field="*{correctRespCode}"
+                               id="inlineRadio3" value="C" required>
+                        <label class="form-check-label" for="inlineRadio3"><span th:text="${word.gender}"></span></label>
+                    </div>
+                </div> 
+                <!--enc checkbox group-->
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-custom mb-2 mt-5">CHECK_TWO</button>
+                </div>
+            </div>
+
+    </form>
+</div>
+
+<script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.4.1/js/bootstrap.min.js}"></script>
+<script th:src="@{/webjars/font-awesome/5.12.0/js/all.min.js}"></script>
+<script th:src="@{/js/trimInput.js}"></script>
+
+</body>
+</html>

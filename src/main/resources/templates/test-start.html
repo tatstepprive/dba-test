@@ -1,0 +1,63 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div th:insert="navbar :: navigation"></div>
+<section class="jumbotron text-center mb-0 pb-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8"><h3>START TEST</h3></div>
+            <div class="col-lg-2 text-right pt-2"><span th:text="${count}"></span></div>
+        </div>
+    </div>
+</section>
+<div class="container text-lg-center">
+    <form method="post" th:object="${test}" th:action="@{/test}" autocomplete="off">
+        <div class="row">
+            <div class="col col-lg-12 feature-box">
+
+                <input hidden class="form-control form-control-lg" th:type="text" th:field="*{id}">
+                <input hidden class="form-control form-control-lg" th:type="text" th:field="*{name}">
+
+                <div class="row mb-2">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-1 colored">
+                        <label class="mb-0 mt-2">Start:</label>
+                    </div>
+                    <div class="col-lg-2 pl-0 pr-0 mr-2">
+                        <input  class="form-control" th:type="number" th:field="*{startIndex}"
+                                placeholder="number"
+                                onkeyup="if(this.value<0)this.value=1"
+                                onblur="if(this.value<0)this.value=1"
+                                min="0"
+                                required>
+                    </div>
+                    <div class="col-lg-1 colored">
+                        <label class="mb-0 mt-2">End:</label>
+                    </div>
+                    <div class="col-lg-2 pl-0 pr-0">
+                        <input class="form-control " type="number" th:field="*{endIndex}"
+                               placeholder="number"
+                               onkeyup="if(this.value<0)this.value=1"
+                               onblur="if(this.value<0)this.value=1"
+                               min="0"
+                               required>
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-custom mb-2 mt-5">START TEST</button>
+                </div>
+            </div>
+
+    </form>
+</div>
+
+<script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.4.1/js/bootstrap.min.js}"></script>
+<script th:src="@{/webjars/font-awesome/5.12.0/js/all.min.js}"></script>
+
+</body>
+</html>

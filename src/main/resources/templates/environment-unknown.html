@@ -1,0 +1,21 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div th:insert="navbar :: navigation"></div>
+<section class="jumbotron text-center mb-0 pb-3">
+    <h3>Environment</h3>
+</section>
+<div class="container text-center">
+
+    <h1 class="display-1 text-default font-weight-bold text-lg-center">?</h1>
+    <h1>Environment UNKNOWN</h1>
+    <span th:text="${'Requested environment id=' + requestedName }"></span>
+
+</div>
+
+<script th:src="@{webjars/jquery/3.1.1/jquery.min.js}"></script>
+<script th:src="@{webjars/bootstrap/4.4.1/js/bootstrap.min.js}"></script>
+<script th:src="@{webjars/font-awesome/5.12.0/js/all.min.js}"></script>
+
+</body>
+</html>
