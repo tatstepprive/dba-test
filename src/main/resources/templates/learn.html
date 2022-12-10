@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-2"></div>
-            <div class="col-lg-8"><h3>LEARN WELL AND GOOD LUCK</h3></div>
+            <div class="col-lg-8"><h3>LEARN WELL</h3></div>
             <div class="col-lg-2 text-right pt-2"><span th:text="${count}"></span></div>
         </div>
     </div>
@@ -18,7 +18,7 @@
                 <span th:text="${word.nameNl}"></span>
             </div>
 
-            <div class="display-4 text-default font-weight-bold text-lg-center text-success">
+            <div hidden class="display-4 text-default font-weight-bold text-lg-center text-success">
                 <span th:text="${word.firstColumnLat}"></span>
                 <span th:text="${word.secondColumnLat}"></span>
                 <span th:text="${'( '+word.gender+ ' )'}"></span>
