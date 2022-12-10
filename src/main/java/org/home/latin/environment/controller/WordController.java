@@ -222,8 +222,8 @@ public class WordController {
         }
         model.addAttribute("correctAnswers", correctAnswers);
         model.addAttribute("result", "Score: "+correctAnswers+"/"+knowledges.size());
-        System.out.println("Showing score");
-        return "score";
+        System.out.println("Showing score or home if no tests");
+        return test==null?"home":"score";
     }
 
     //--------/list-scores get mappings-----------------------

@@ -2,8 +2,8 @@
 --USE `dba_test`;
 -- POSTGRES
 
-ALTER TABLE  public.word ALTER COLUMN gender TYPE varchar(45);
-ALTER TABLE public.student_input ALTER COLUMN gender TYPE varchar(45);
+ALTER TABLE  public.word ALTER COLUMN gender TYPE varchar(255);
+ALTER TABLE public.student_input ALTER COLUMN gender TYPE varchar(2SS);
 
 ALTER TABLE public.word ADD COLUMN correct_resp_code VARCHAR(10);
 ALTER TABLE public.student_input ADD COLUMN correct_resp_code VARCHAR(10);

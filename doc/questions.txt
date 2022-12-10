@@ -1,0 +1,83 @@
+50 questions (33 ch) about 2 questions per chapter
+============
+p13ch1q3
+1 Which environment variable must be set on Linux before running the OUI for an interactive installation?
+A. DISPLAY
+B. ORACLE_HOME
+C. ORACLE_SID
+
+ans: A
+---------------------------------------------------------------------------
+p13ch1q4
+2 If the OUI detects that a prerequisite has not been met, what can you do?
+A. You must cancel installation, fix the problem and launch OUI again.
+B. A silent install will fail, an interactive install will continue.
+C. Instruct OUI to continue at your own risk
+
+ans: C (striky one)
+
+---------------------------------------------------------------------------
+p33ch2q2
+3 To create a database, in what mode must the instance be?
+A. Not started
+B. Started in NOMOUNT mode
+C. Started in MOUNT mode
+
+ans: B (the instance must be running before you create database, not OPEN (no datafile), no MOUNT (no controlfile)
+----------------------------------------------------------------------------
+p34ch2q4
+4 What instance parameter cannot be changed after database creation?
+A. All instance parameters can be changed after database creation if it is done in the MOUNT mode.
+B. CONTROL_FILES
+C. DB_BLOCK_SIZE
+
+ans: C DB_BLOCK_SIZE is eht one parameter that can never be changed after creation.
+----------------------------------------------------------------------------
+p52ch3q6
+5 What does ASM stripe?
+A. Files across all disk groups
+B. Disks across all disk groups
+C. Files across all disks in a group
+
+ans: C ASM stripes files across all disks in the group
+----------------------------------------------------------------------------
+p122ch5q
+6 If a table is created without specifying a schema, in which schema will it be?
+A. It will be in the SYS schema
+B. It will be in the schema of the user creating it
+C. It will be in the public schema
+
+ans: B the schema will default to the current user
+----------------------------------------------------------------------------
+p122ch5q3
+7 Which of these statements will fail?
+A. Create table "SELECT" (col1 date);
+B. Create table 3number (col1 date);
+C. Create table number3 (col1 date);
+
+ans: B
+----------------------------------------------------------------------------
+p123ch5q7
+8 Which of the following is not supported by Oracle as an internal data type?
+A. INTEGER
+B. FLOAT
+C. STRING
+
+ans: C
+-----------------------------------------------------------------------------
+p123ch5q8
+9. Create table t1 as select * from regions where 1=2;
+A. No table will be created because the condition returns FALSE
+B. The empty table T1 will be created
+C. There will be an error because of the impossible condition
+
+ans: B
+----------------------------------------------------------------------------
+p125ch5q15
+10 Where does the data in a temporary table get written to disk?
+A. It is never written to disk
+B. To the users temporary tablespace
+C. To a disk local to the session user process
+
+ans: B
+---------------------------------------------------------------------------

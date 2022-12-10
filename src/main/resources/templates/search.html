@@ -22,11 +22,10 @@
         <thead class="table-success">
         <tr>
             <th scope="col" >ID</th>
-            <th scope="col" onclick="sortTable(0,'allwords')">NL</th>
-            <th scope="col" >LAT1</th>
-            <th scope="col" >LAT2</th>
-            <th scope="col" >GENDER</th>
-            <th scope="col" >TYPE</th>
+            <th scope="col" onclick="sortTable(0,'allwords')">QUESTION</th>
+            <th scope="col" >CHOICE_A</th>
+            <th scope="col" >CHOICE_B</th>
+            <th scope="col" >CHOICE_C</th>
             <th scope="col" >ANSWER</th>
         </tr>
         </thead>
@@ -37,7 +36,6 @@
             <td><span th:text="${word.firstColumnLat}"></span></td>
             <td><span th:text="${word.secondColumnLat}"></span></td>
             <td><span th:text="${word.gender}"></span></td>
-            <td><span th:text="${word.type}"></span></td>
             <td><span th:text="${word.correctRespCode}"></span></td>
         </tr>
         </tbody>
