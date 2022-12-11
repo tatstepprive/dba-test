@@ -11,10 +11,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav ml-auto">
                     <a class="nav-link" th:classappend="${#httpServletRequest.getRequestURI() == '/' ? 'active':''}"  th:href="@{/}">Home</a>
-                    <a class="nav-link"  th:classappend="${#httpServletRequest.getRequestURI().startsWith('/learn') ? 'active':''}" th:href="@{/learn}">Learn</a>
-                    <a class="nav-link"  th:classappend="${#httpServletRequest.getRequestURI().startsWith('/test') ? 'active':''}" th:href="@{/test}">Test</a>
-                    <a class="nav-link"  th:classappend="${#httpServletRequest.getRequestURI() == '/score' ? 'active':''}" th:href="@{/score}">Score</a>
-                    <a class="nav-link"  th:classappend="${#httpServletRequest.getRequestURI() == '/search' ? 'active':''}" th:href="@{/search}">Search</a>
+                    <a class="nav-link disabled" role="button" aria-disabled="true" th:classappend="${#httpServletRequest.getRequestURI().startsWith('/learn') ? 'active':''}" th:href="@{/learn}">Learn</a>
+                    <a class="nav-link disabled" role="button" aria-disabled="true"  th:classappend="${#httpServletRequest.getRequestURI().startsWith('/test') ? 'active':''}" th:href="@{/test}">Test</a>
+                    <a class="nav-link disabled" role="button" aria-disabled="true" th:classappend="${#httpServletRequest.getRequestURI() == '/score' ? 'active':''}" th:href="@{/score}">Score</a>
+                    <a class="nav-link disabled" role="button" aria-disabled="true"  th:classappend="${#httpServletRequest.getRequestURI() == '/search' ? 'active':''}" th:href="@{/search}">Search</a>
             </div>
         </div>
     </nav>
