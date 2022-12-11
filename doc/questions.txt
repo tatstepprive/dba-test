@@ -1,5 +1,6 @@
 50 questions (33 ch) about 2 questions per chapter
-============
+==========================================================================
+--# 1 part 10 questions
 p13ch1q3
 1 Which environment variable must be set on Linux before running the OUI for an interactive installation?
 A. DISPLAY
@@ -81,3 +82,171 @@ C. To a disk local to the session user process
 
 ans: B
 ---------------------------------------------------------------------------
+===========================================================================
+--# 2 part 10 questions
+p126ch5q21
+11 
+create synonym s1 for employees;
+create public synonym s1 for departments;
+select * from s1;
+A. The second statement will fail because an object s1 already exists
+B. The third statement will show the contents of employees
+C. The third statement will show the contents of departments
+
+ans: B
+--------------------------------------------------------------------------
+p127ch5q22
+12 
+create view dept_v as select * from dept;
+create synonym dept_s for dept_v;
+drop table dept;
+select * from dept_s;
+A. There will be an error because the synonym will be invalid
+B. There will be an error because the view will be invalid
+C. There will be an error because the view will have been dropped implicitly when the table was dropped
+
+ans: B
+--------------------------------------------------------------------------
+p127ch5q23
+13
+create sequence seq1 start with 1 maxvalue 50;
+If the current value is already 50 and you attempt to select SEQ1.NEXTVAL what will happen?
+A. The sequence will cycle and issue 1
+B. The sequence will reissue 50
+C. There will be an error
+
+ans: C
+--------------------------------------------------------------------------
+p127ch5q24
+14
+create sequence seq1 start with 1;
+After selecting from it a few times, you want to reinitialize it to reusse the number already generated.
+A. You must drop and re-create the sequence
+B. ALTER SEQUENCE SEQ1 START WITH 1; --to reset the next value to 1
+C. ALTER SEQUENCE SEQ1 CYCLE; --to reset the sequence to its starting value
+
+ans: A
+---------------------------------------------------------------------------
+p175ch6q2
+15 If un UPDATE or DELETE command has a WHERE clause that gives it a scope of several rows and there is an error partway through execution? The command is one of several in a multistatement transaction.
+A. The command will stop at the error and the already updated/deleded rows will remain updated/deleted.
+B. The whole transaction will be rolled back
+C. Whatever work the command had done before hitting the error will be rolled back, but work done alredy by the transaction will remain.
+
+ans: C
+---------------------------------------------------------------------------
+p176ch6q3
+16 Why will it fail: insert into t1 (c1, c2) values (select c1, c2 from t1); 
+A. Because values are not provided for all the tables columns
+B. Because the subquery returns multiple rows and it requires a to restrict the number of rows returned by using WHERE or other.
+C. Because the VALUES keyword is not used with a subquery
+
+ans: C
+--------------------------------------------------------------------------
+p176ch6q5
+17 Which of these commands will remove every row in a table?
+A. DELETE command with no WHERE clause
+B. DROP TABLE command
+C. UPDATE command by setting every column to NULL 
+
+ans: A
+---------------------------------------------------------------------------
+p177ch6q8
+18 When a COMMIT is issued, what will happen?
+A. The undo data is deleted so that the changes can no longer be rolled back
+B. DBWn writes the change blocks to disk
+C. LGWR writes the log buffer to disk
+
+ans: C
+----------------------------------------------------------------------------
+p177ch6q9
+19 What types of segments are protected by redo?
+A. Index, Table, Temporary, Undo segments
+B. Index, Table, Undo segments
+C. Index, Table
+
+ans: B
+----------------------------------------------------------------------------
+p177ch6a11
+20 If one user updates a row without specifying any locking, what will be the effect on other sessions?
+A. Others will be able to read and write other rows but no the affected rows
+B. Others will be able to read the affected rows but not write to them
+C. Others will be able to read and write the affected rows, but a COMMIT will hang until the first session has been committed or rolled back
+
+ans: B
+----------------------------------------------------------------------------
+============================================================================
+--# 3 part 10 questions
+p177ch6q12
+21 Which of these commands will prevent other sessions from reading rows in the table?
+A. LOCK TABLE SAM.T1 IN EXLUSIVE MODE;
+B. LOCK TABLE SAM.T1 in ROW EXCLUSIVE MODE;
+C. Oracle does not provide a lock that will prevent others from reading a table
+
+ans: C
+----------------------------------------------------------------------------
+p178ch6q13
+22 If several sessions request an exlusive lock on the same row, what will happen?
+A. The first session will get an exclusive lock and the other sessions will get shared locks
+B. The first session will get an exclusive lock, after it releases the lock the next session in sequence will get it
+C. Oracle will detect the conflict and release the lock
+
+ans: B
+----------------------------------------------------------------------------
+p178ch6q14
+23 If a programmer does not request a type of lock when updating many rows in one table, what lock/locks will they be given?
+A. An exlusive lock the the table. This is the fastest method when many rows are being updated
+B. Shared locks on the table and on each row. This is the safest although not the fastest method
+C. An exclusive lock on each row an a shared lock on the table. This maximizes concurrency safely
+
+ans: C
+-----------------------------------------------------------------------------
+p178ch6q15
+24 What happens if two sessions deadlock against each other?
+A. Oracle will automatically roll back one sessions statement
+B. Oracle will automatically terminate one session
+C. Both sessions will hang indefinitely
+
+ans: A
+-----------------------------------------------------------------------------
+p178ch6q16
+25 When a DML statement executes, what happens?
+A. Both the data and the undo blocks on disk are updated, and the changes are written out to the redo stream
+B. Both data and undo blocks are updated in the database buffer cache, and the updates also go the log buffer
+C. The redo log buffer is updated with information needed to rede the transaction and the undo blocks are updated with inforamtion needed to reverse the transaction.
+
+ans: B
+-----------------------------------------------------------------------------
+p179ch6q17
+26 If you suspect that undo generation is a performance issue, what can you do to reduce the amount of undo data generated?
+A. There is nothing you can do because all DML statements must generate undo
+B. Reduce the size of the undo segments
+C. Convert from use of rollback segments to automatic undo management
+
+ans: A
+------------------------------------------------------------------------------
+p179ch6q19
+27 If an undo segment fills up, what will happen?
+A. Another undo segment will be created automatically
+B. The undo segment will increase in size
+C. Transactions will continue in a different undo segment
+
+ans: B
+------------------------------------------------------------------------------
+p179ch6q21
+28 Your undo tablespace has 10 undo segments, but during a sudden burst of activity you have 20 concurrent transactions. What will happen?
+A. Oracle will create another 10 undo segments
+B. What happens will depend on your UNDO_RETENTION setting
+C. The transactions will be automatically balanced across the 10 undo segments
+
+ans: A
+------------------------------------------------------------------------------
+p180ch6q22
+29 Your users are reporting ORA-1555: Snapshot too old errors. What might be the cause of this?
+A. Your undo tablespace is retaining data for too long
+B. The undo data is too old
+C. There is not enough undo data
+
+ans: C
+-----------------------------------------------------------------------------
+
