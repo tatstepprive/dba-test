@@ -249,4 +249,97 @@ C. There is not enough undo data
 
 ans: C
 -----------------------------------------------------------------------------
+p236ch7q2
+30 After describing the T1 table, you discover that the COL1 column has the data type of NUMBER(8,2). Which values will not be permitted in this column?
+A. 123456.78
+B. 123456
+C. 1234567.8
+
+ans: C
+
+============================================================================
+--# 4 part 10 questions
+p236ch7q2
+31 There are START_DATE and END_DATE columns with the data type of DATE in the T1 table. What happens when you try the expression END_DATE - START_DATE?
+A. Value of VARCHAR2 data type is returned
+B. Value of type NUMBER is returned
+C. The expression is invalid since the arithmetic cannot be performed on columns with DATE types
+
+ans: B
+------------------------------------------------------------------------------
+p237ch7q4
+32 Which statement reports on unique JOB_ID values from the EMPLOYEES table?
+A. SELECT UNIQUE JOB_ID from EMPLOYEES;
+B. SELECT DISTINCT JOB_ID, IMPLOYEE_ID FROM EMPLOYEES;
+C. SELECT DISTINCT JOB_ID FROM IMPLOYEES
+
+ans: C
+------------------------------------------------------------------------------
+p237ch7q11
+33 When using a row limiting clause in the following query, what employee information is returned:
+SELECT employee_id, first_name
+FROM  employees
+ORDER by employee_id
+OFFSET 5 ROWS FETCH NEXT 5 ROWS ONLY;
+A. The 5 employees with the highest employee_id
+B. The 5 employees with the lowest employee_id
+C. None of the above
+
+ans: C
+------------------------------------------------------------------------------
+p275ch8q4
+34 What value is returned after executing the following statement: SELECT MOD(14,3) FROM DUAL;
+A. 2
+B. 4
+C. 42 
+
+ans: A
+-------------------------------------------------------------------------------
+p276ch8q6
+35 What value is returned after executing the following statement if sysdate=30-DEC-2022: select trunc(sysdate, 'YEAR');
+A. 31-DEC-2022
+B. 01-JAN-2023
+C. 01-JAN-2022
+
+ans: C
+-------------------------------------------------------------------------------
+p27§-6ch8q8
+36 What value is returned after executing the following statement if sysdate=12-JUL-2022: select to_char(sysdate, 'fmDDth MONTH') from dual;
+A. 12TH JULY
+B. 12th July
+C. TWELFTH JULY
+
+ans: A
+--------------------------------------------------------------------------------
+p276ch8q9
+37 What value is returned after executing the following statement? SELECT NVL2(NULLIF('CODA', 'SID'), 'DOG', 'CAT') FROM DUAL;
+A. DOG
+B. CAT
+C. NULL
+
+ans: A
+--------------------------------------------------------------------------------
+p297ch9q1
+38 What result is returning by the following statement: SELECT COUNT(*) FROM DUAL;
+A. 2
+B. 0
+C. 1
+
+ans: C
+--------------------------------------------------------------------------------
+p298ch9q3
+39 The table EMPLOYEES contains 10 employees with 9 having SALARY=100 and one having NULL in SALARY column. What value is returned by executing: SELECT SUM(SALARY) FROM EMPLOYEES;
+A. 900
+B. 1000
+C. NULL
+
+ans: A
+--------------------------------------------------------------------------------
+p365ch11q7
+40 Which comparisation operator cannot be used with multiple-row subqueries?
+A. ALL
+B. ANY
+C. all the above can be used
+==========================================================================
+--# 4 part 10 questions
 
