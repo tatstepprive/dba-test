@@ -1,4 +1,5 @@
 50 questions (33 ch) about 2 questions per chapter
+--Thank you for your participation in the DBA test
 ==========================================================================
 --# 1 part 10 questions
 p13ch1q3

@@ -135,7 +135,8 @@ public class WordController {
             model.addAttribute("count", "questions: "+testedWords.size()+"/"+test.getNumberWords());
         }
         System.out.println("Showing score or test-word with word="+word);
-        return word==null?"score":"test-word";
+//        return word==null?"score":"test-word"; //dont show score
+        return word==null?"test-finish":"test-word";
     }
 //-----------/test post mappings-------------------------------------
     @PostMapping("/test")
@@ -247,8 +248,18 @@ public class WordController {
         System.out.println("Showing score");
 
  */
+        System.out.println("Showing list scores");
         return "list-scores";
     }
+
+//--------/finish get mappings-----------------------------
+    @GetMapping("/finish")
+    public String getFinish(Model model){
+        System.out.println("In getTest get /finish");
+        System.out.println("Schowing test-finish");
+        return "test-finish";
+    }
+
     //--------/search get mappings-----------------------------
     @GetMapping("/search")
     public String getSearch(Model model){

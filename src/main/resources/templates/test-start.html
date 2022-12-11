@@ -18,7 +18,7 @@
 
                 <input hidden class="form-control form-control-lg" th:type="text" th:field="*{id}">
                 <input hidden class="form-control form-control-lg" th:type="text" th:field="*{name}">
-
+                
                 <div class="row mb-2">
                     <div class="col-lg-3">
                     </div>
@@ -43,6 +43,20 @@
                                onblur="if(this.value<0)this.value=1"
                                min="0"
                                required>
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-1 colored">
+                        <label class="mb-0 mt-2">USER:</label>
+                    </div>
+                    <div class="col-lg-5 pl-0 pr-0 mr-2">
+                        <input  class="form-control" th:type="text" 
+                                placeholder="give your name or email, please"
+                                required>
                     </div>
                     <div class="col-lg-3">
                     </div>
