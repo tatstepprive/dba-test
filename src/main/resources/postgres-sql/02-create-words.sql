@@ -189,31 +189,102 @@ VALUES
                 'C', 'noun', null);
         commit;
 --/*insert per bunch of 10 words 4/10*/
-INSERT INTO word (name_nl, first_column_lat, second_column_lat, gender, type, image_path)
+INSERT INTO word (name_nl, first_column_lat, second_column_lat, gender, correct_resp_code, type, image_path)
 VALUES
-        ('prachtig', 'magnificus','-a, -um','o', 'noun', null),
-	('groot', 'magnus','-a, -um','o', 'noun', null),
-	('belangrijk', 'magnus','-a, -um','o', 'noun', null),
-	('slecht', 'malus','-a, -um','o', 'noun', null),
-	('nieuw', 'novus','-a, -um','o', 'noun', null),
-	('beste', 'optimus','-a, -um','o', 'noun', null),
-	('zeer goed', 'optimus','-a, -um','o', 'noun', null),
-	('Romeins', 'Romanus','-a, -um','o', 'noun', null),
-	('leider', 'dux','ducis','m', 'noun', null),
-	('moeder', 'mater','matris','v', 'noun', null);
+        ('There are START_DATE and END_DATE columns with the data type of DATE in the T1 table. What happens when you try the expression END_DATE - START_DATE?',
+                'Value of VARCHAR2 data type is returned',
+                'Value of type NUMBER is returned',
+                'The expression is invalid since the arithmetic cannot be performed on columns with DATE types',
+                'B','noun', null),
+	('Which statement reports on unique JOB_ID values from the EMPLOYEES table?',
+                'SELECT UNIQUE JOB_ID from EMPLOYEES;',
+                'SELECT DISTINCT JOB_ID, IMPLOYEE_ID FROM EMPLOYEES;',
+                'SELECT DISTINCT JOB_ID FROM IMPLOYEES',
+                'C', 'noun', null),
+	('When using a row limiting clause in the following query, what employee information is returned:<br />
+SELECT employee_id, first_name<br />
+FROM  employees<br />
+ORDER by employee_id<br />
+OFFSET 5 ROWS FETCH NEXT 5 ROWS ONLY;',
+                'The 5 employees with the highest employee_id',
+                'The 5 employees with the lowest employee_id',
+                'None of the above',
+                'C', 'noun', null),
+	('What value is returned after executing the following statement: SELECT MOD(14,3) FROM DUAL;',
+                '2',
+                '4',
+                '42',
+                'A', 'noun', null),
+	('What value is returned after executing the following statement if sysdate=30-DEC-2022:<br />
+select trunc(sysdate, ''YEAR'');',
+                '31-DEC-2022',
+                '01-JAN-2023',
+                '01-JAN-2022',
+                'C', 'noun', null),
+	('What value is returned after executing the following statement if sysdate=12-JUL-2022:<br />
+select to_char(sysdate, ''fmDDth MONTH'') from dual;',
+                '12TH JULY',
+                '12th July',
+                'TWELFTH JULY',
+                'A', 'noun', null),
+	('What value is returned after executing the following statement:<br />
+select NVL2(NULLIF(''CODA'', ''SID''), ''DOG'', ''CAT'') from dual;',
+                'DOG',
+                'CAT',
+                'NULL',
+                'A', 'noun', null),
+	('What result is returning by the following statement:<br />
+select COUNT(*) from dual;',
+                '2',
+                '0',
+                '1',
+                'C', 'noun', null),
+	('The table EMPLOYEES contains 10 employees with 9 having SALARY=100 and one having NULL in SALARY column. What value is returned by executing:<br />
+SELECT SUM(SALARY) FROM EMPLOYEES;',
+                '900',
+                '1000',
+                'NULL',
+                'A','noun', null),
+	('Which comparisation operator cannot be used with multiple-row subqueries?',
+                'ALL',
+                'ANY',
+                'all the above can be used',
+                'C', 'noun', null);
         commit;
 --/*insert per bunch of 10 words 5/10*/
-INSERT INTO word (name_nl, first_column_lat, second_column_lat, gender, type, image_path)
+INSERT INTO word (name_nl, first_column_lat, second_column_lat, gender, correct_resp_code, type, image_path)
 VALUES
-     ('lichaam', 'corpus','corporis','o', 'noun', null),
-     ('liefde', 'amor','amoris','m', 'noun', null),
-     ('tand', 'dens','dentis','m', 'noun', null),
-     ('mens', 'homo','hominis','m', 'noun', null),
-     ('soldaat', 'miles','militis','m', 'noun', null),
-     ('zon', 'sol','solis','m', 'noun', null),
-     ('boom', 'arbor','arboris','v', 'noun', null),
-     ('licht', 'lux','lucis','v', 'noun', null),
-     ('dood', 'mors','mortis','v', 'noun', null),
-     ('nacht', 'nox','noctis','v', 'noun', null);
+     ('q51',
+                 'corpus',
+                 'corporis',
+                 'o',
+                 'N', 'noun', null),
+     ('q52',
+                 'amor','amoris','m',
+                 'N', 'noun', null),
+     ('q53',
+                 'dens','dentis','m',
+                 'N', 'noun', null),
+     ('q54',
+                 'homo','hominis','m',
+                 'N', 'noun', null),
+     ('q55',
+                 'miles','militis','m',
+                 'N', 'noun', null),
+     ('q56',
+                 'sol','solis','m',
+                 'N', 'noun', null),
+     ('q57',
+                 'arbor','arboris','v',
+                 'N', 'noun', null),
+     ('q58',
+                 'lux','lucis','v',
+                 'N', 'noun', null),
+     ('q59',
+                 'mors','mortis','v',
+                 'N', 'noun', null),
+     ('q60',
+                 'nox','noctis','v',
+                 'N', 'noun', null);
      commit;
 
