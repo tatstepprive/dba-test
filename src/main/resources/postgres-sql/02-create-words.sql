@@ -251,6 +251,7 @@ SELECT SUM(SALARY) FROM EMPLOYEES;',
                 'all the above can be used',
                 'C', 'noun', null);
         commit;
+/*INSERT QUESTION TEMPLATE
 --/*insert per bunch of 10 words 5/10*/
 INSERT INTO word (name_nl, first_column_lat, second_column_lat, gender, correct_resp_code, type, image_path)
 VALUES
@@ -287,4 +288,4 @@ VALUES
                  'nox','noctis','v',
                  'N', 'noun', null);
      commit;
-
+*/
