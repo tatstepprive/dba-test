@@ -19,7 +19,7 @@
             <div class="col col-lg-12 text-lg-center feature-box">
                 <!--          <img alt="info" width="24" height="24" th:src="@{/images/info-icon.png}"></img>-->
                 <div class="display-4 text-default font-weight-bold text-lg-left">
-                <h1><span th:utext="${word.nameNl}" th:field="*{nameNl}"></span></h1>
+                <span th:utext="${word.nameNl}" th:field="*{nameNl}"></span>
                 </div>
 
                 <input hidden class="form-control form-control-lg" th:type="text" th:field="*{id}">
