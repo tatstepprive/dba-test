@@ -18,8 +18,8 @@
         <div class="row">
             <div class="col col-lg-12 text-lg-center feature-box">
                 <!--          <img alt="info" width="24" height="24" th:src="@{/images/info-icon.png}"></img>-->
-                <div class="display-4 text-default font-weight-bold text-lg-center">
-                    <span th:text="${word.nameNl}" th:field="*{nameNl}"></span>
+                <div class="display-4 text-default font-weight-bold text-lg-left">
+                <h1><span th:utext="${word.nameNl}" th:field="*{nameNl}"></span></h1>
                 </div>
 
                 <input hidden class="form-control form-control-lg" th:type="text" th:field="*{id}">
@@ -66,7 +66,7 @@
                 </div>
                 <!--enc checkbox group-->
                 <!--checkbox group-->
-                <div class="text-lg-left mt-5"> 
+            <h3><div class="text-lg-left mt-5"> 
                     <div class="form-check ">
                         <input class="form-check-input" type="radio" name="correctRespCode" th:field="*{correctRespCode}"
                                id="inlineRadio1" value="A" required>
@@ -84,7 +84,7 @@
                                id="inlineRadio3" value="C" required>
                         <label class="form-check-label" for="inlineRadio3"><span th:text="${word.gender}"></span></label>
                     </div>
-                </div> 
+                </div> </h3>
                 <!--enc checkbox group-->
                 <div class="col-auto">
                     <button type="submit" class="btn btn-custom mb-2 mt-5">CONFIRM</button>
