@@ -171,7 +171,7 @@ VALUES
                'Another undo segment will be created automatically',
                'The undo segment will increase in size',
                'Transactions will continue in a different undo segment',
-               'B' 'noun', null),
+               'B', 'noun', null),
 	('Your undo tablespace has 10 undo segments, but during a sudden burst of activity you have 20 concurrent transactions. What will happen?',
                'Oracle will create another 10 undo segments',
                'What happens will depend on your UNDO_RETENTION setting',
