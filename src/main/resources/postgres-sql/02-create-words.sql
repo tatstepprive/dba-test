@@ -160,7 +160,7 @@ VALUES
 	('When a DML statement executes, what happens?',
                'Both the data and the undo blocks on disk are updated, and the changes are written out to the redo stream',
                'Both data and undo blocks are updated in the database buffer cache, and the updates also go the log buffer',
-               'The redo log buffer is updated with information needed to rede the transaction and the undo blocks are updated with inforamtion needed to reverse the transaction.',
+               'The redo log buffer is updated with information needed to redo the transaction and the undo blocks are updated with inforamtion needed to reverse the transaction.',
                'B', 'noun', null),
 	('If you suspect that undo generation is a performance issue, what can you do to reduce the amount of undo data generated?',
                'There is nothing you can do because all DML statements must generate undo',
