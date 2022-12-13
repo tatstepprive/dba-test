@@ -6,7 +6,8 @@ DROP TABLE IF EXISTS test;
 
 CREATE TABLE test (
   id SERIAL PRIMARY KEY,
-  name varchar(45) DEFAULT NULL,
+  name varchar(255) DEFAULT NULL,
+  student_name varchar(255) DEFAULT NULL,
   date date DEFAULT NULL,
   start_index int DEFAULT NULL,
   end_index int DEFAULT NULL,

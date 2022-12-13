@@ -17,6 +17,9 @@ public class Test {
     @Column(name="name")
     private String name;
 
+    @Column(name="student_name")
+    private String studentName;
+
     @Column(name="date")
     private Date date;
 
@@ -62,6 +65,14 @@ public class Test {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
     public Integer getStartIndex() {
@@ -129,6 +140,7 @@ public class Test {
         return "Test{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", studentName='" + studentName + '\'' +
                 ", date=" + date +
                 ", startIndex=" + startIndex +
                 ", endIndex=" + endIndex +

@@ -144,6 +144,8 @@ public class WordController {
         List<Word> words=service.findFromTill(test.getStartIndex(), test.getEndIndex());
         test.setWords(words);
         test.setNumberWords(test.getWords().size());
+        test.setDate(new Date());
+        test.setName(test.getName().concat(test.getStudentName()==null?"anonym":test.getStudentName().trim()));
         System.out.println("In testSubmit post /test");
         System.out.println("Saving test="+test);
         testService.save(test);

@@ -9,3 +9,6 @@ ALTER TABLE public.word ADD COLUMN correct_resp_code VARCHAR(10);
 ALTER TABLE public.student_input ADD COLUMN correct_resp_code VARCHAR(10);
 
 UPDATE public.word set correct_resp_code='A'; commit;
+
+ALTER TABLE public.test ADD COLUMN student_name VARCHAR(255);
+ALTER TABLE  public.test ALTER COLUMN name TYPE varchar(255);
